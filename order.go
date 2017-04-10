@@ -16,6 +16,6 @@ type OrderBook struct {
 }
 type Orderb struct {
 	Rate     string
-	Quantity float64
+	Quantity decimal.Decimal
 }
 */

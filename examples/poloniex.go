@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/jyap808/go-poloniex"
+	"github.com/jinkwangchoi/go-poloniex"
 )
 
 const (
@@ -21,23 +21,21 @@ func main() {
 	*/
 
 	// Get Tickers
-	/*
-		tickers, err := poloniex.GetTickers()
-		if err != nil {
-			fmt.Println("Error:", err)
-		} else {
-			for key, ticker := range tickers {
-				fmt.Printf("Ticker: %s, Last: %.8f\n", key, ticker.Last)
-			}
+	tickers, err := poloniex.GetTickers()
+	if err != nil {
+		fmt.Println("Error:", err)
+	} else {
+		for key, ticker := range tickers {
+			fmt.Printf("Ticker: %s, Last: %s\n", key, ticker.Last)
 		}
-		tickerName := "BTC_FLO"
-		ticker, ok := tickers[tickerName]
-		if ok {
-			fmt.Printf("BTC_FLO Last: %.8f\n", ticker.Last)
-		} else {
-			fmt.Println("ticker not found - ", tickerName)
-		}
-	*/
+	}
+	tickerName := "BTC_FLO"
+	ticker, ok := tickers[tickerName]
+	if ok {
+		fmt.Printf("BTC_FLO Last: %s\n", ticker.Last)
+	} else {
+		fmt.Println("ticker not found - ", tickerName)
+	}
 
 	// Get Volumes
 	/*
@@ -69,10 +67,8 @@ func main() {
 	*/
 
 	// Get orders book
-	/*
-		orderBook, err := poloniex.GetOrderBook("BTC-DRK", "both", 100)
-		fmt.Println(err, orderBook)
-	*/
+	orderBook, err := poloniex.GetOrderBook("BTC_ETH", "both", 100)
+	fmt.Println(err, orderBook)
 
 	// Market history
 	/*
